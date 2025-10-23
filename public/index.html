@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    
-    <title>Assistente Ollama Mal-Educado (Local)</title>
-    <meta name="description" content="Interface de chat local rodando o Ollama com persona mal-educada.">
-    
-    <link rel="icon" href="/favicon.ico" sizes="32x32"> 
-    
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GPTzinho 😈</title>
+  <meta name="description" content="Interface de chat local com persona mal-educada.">
+  <link rel="icon" href="favicon.ico?v=2" type="image/x-icon">
+
+
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="chat-container">
-        <h1>Assistente Ollama Mal-Educado 😈</h1>
-        <div class="messages-area" id="messages-area">
-            <div class="message bot-message">
-                <span class="user-name">Ollama</span>
-                <p>Estou ocupado. Se for me fazer uma pergunta estúpida, nem perca seu tempo.</p>
-            </div>
-        </div>
-        <form id="chat-form" class="input-area">
-            <input type="text" id="user-input" placeholder="Pergunte algo (se tiver coragem)..." required>
-            <button type="submit" id="send-button">Enviar</button>
-        </form>
+
+<body class="h-full bg-chat-bg text-gray-200 flex flex-col font-sans">
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-chat-panel p-4 text-center shadow-md">
+    <h1 class="text-lg font-semibold flex justify-center items-center gap-2">
+      <span>GPTzinho</span> <span class="text-red-500">😈</span>
+    </h1>
+  </header>
+
+  <!-- Área de mensagens -->
+  <main id="messages-area" class="flex-grow overflow-y-auto px-4 py-6 space-y-6">
+    <div class="message bot-message">
+      <span class="user-name">GPTzinho</span>
+      <p>Estou ocupado. Se for me fazer uma pergunta estúpida, nem perca seu tempo.</p>
     </div>
-    
-    <script src="script.js"></script>
+  </main>
+
+  <!-- Campo de entrada -->
+  <form id="chat-form" class="chat-input">
+    <input 
+      type="text" 
+      id="user-input" 
+      placeholder="Pergunte algo (se tiver coragem)..." 
+      required 
+      class="input-field"
+    >
+    <button type="submit" id="send-button" class="send-btn">
+      Enviar
+    </button>
+  </form>
+
+  <script src="script.js"></script>
 </body>
 </html>

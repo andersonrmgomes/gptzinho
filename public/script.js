@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const userNameSpan = document.createElement('span');
         userNameSpan.classList.add('user-name');
-        userNameSpan.textContent = sender === 'user' ? 'Você' : 'Ollama';
+        userNameSpan.textContent = sender === 'user' ? 'Você' : 'GPTzinho';
 
         const contentP = document.createElement('p');
         contentP.textContent = content;
