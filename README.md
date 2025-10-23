@@ -9,6 +9,17 @@ Este repositório oferece uma UI simples de chat e um servidor Node.js/Express c
 - Frontend: arquivos estáticos em `public/` (HTML, CSS, JS). UI minimalista para conversar com o assistente.
 - Backend: `server.js` — servidor Express que expõe o endpoint `POST /chat` e serve os arquivos estáticos.
 - Integração: depende de um servidor Ollama rodando localmente com o modelo apropriado (ex.: `llama3.2:3b`).
+# GPTzinho
+
+Projeto pequeno que fornece uma interface web local (frontend em `public/`) e um backend Express que encaminha prompts para um modelo rodando via Ollama.
+
+Este repositório oferece uma UI simples de chat e um servidor Node.js/Express com um endpoint `POST /chat` que envia prompts ao Ollama e retorna as respostas ao frontend.
+
+## Visão geral
+
+- Frontend: arquivos estáticos em `public/` (HTML, CSS, JS). UI minimalista para conversar com o assistente.
+- Backend: `server.js` — servidor Express que expõe o endpoint `POST /chat` e serve os arquivos estáticos.
+- Integração: depende de um servidor Ollama rodando localmente com o modelo apropriado (ex.: `llama3.2:3b`).
 
 ## Pré-requisitos
 
@@ -22,21 +33,35 @@ Observação: o projeto não inclui o modelo. Você precisa ter o Ollama e o(s) 
 
 1. Clone o repositório (se ainda não fez):
 
-	git clone <repo>
+```bash
+git clone https://github.com/andersonrmgomes/gptzinho.git
+```
 
-2. Entre na pasta do projeto e instale dependências:
+2. Entre na pasta do projeto:
 
-	npm install
+```bash
+cd gptzinho
+```
 
-3. (Opcional) Crie um arquivo `.env` na raiz se quiser ajustar a porta:
+3. Instale dependências:
 
-	PORT=3000
+```bash
+npm install
+```
+
+4. (Opcional) Crie um arquivo `.env` na raiz se quiser ajustar a porta:
+
+```bash
+echo "PORT=3000" > .env
+```
 
 ## Execução
 
-- Iniciar o servidor (produção/simple):
+Iniciar o servidor:
 
-  npm start
+```bash
+npm start
+```
 
 Isso iniciará o servidor Express definido em `server.js`. Abra `http://localhost:3000` no navegador para acessar a interface.
 
@@ -55,8 +80,22 @@ Isso iniciará o servidor Express definido em `server.js`. Abra `http://localhos
 
 Endpoint principal: `POST /chat`
 
-- Request JSON: { "prompt": "sua pergunta aqui" }
-- Response JSON: { "model": "<modelo>", "response": "texto de resposta" }
+Request JSON:
+
+```json
+{
+  "prompt": "sua pergunta aqui"
+}
+```
+
+Resposta JSON de sucesso (exemplo):
+
+```json
+{
+  "model": "llama3.2:3b",
+  "response": "texto de resposta"
+}
+```
 
 Veja `docs/API.md` para detalhes.
 
@@ -79,3 +118,4 @@ Projeto com licença ISC (ver `package.json`).
 
 ---
 Arquivos de documentação adicionais foram adicionados em `docs/`.
+
